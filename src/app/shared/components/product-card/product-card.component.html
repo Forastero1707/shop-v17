@@ -1,0 +1,29 @@
+<div class="col hp">
+    <div class="card h-100 shadow-sm">
+        <a target="_blank" href="#" (click)="onEsDetalle();">
+            @if (listaImagenes!=null) {
+                <img [src]="imagenPrincipal" class="card-img-top"
+                (mouseover) = "obtenerImagenSecundaria()" 
+                (mouseout) = "obtenerImagenPrincipal()"
+                alt="product.title" />
+            }            
+        </a>
+        <div class="label-top shadow-sm">
+            <a class="text-white" target="_blank" href="#" (click)="onEsDetalle();">asus</a>
+        </div>
+        <div class="card-body">
+            <div class="clearfix mb-3">
+                <span class="float-start badge rounded-pill bg-success">S/. {{precio}}</span>
+                <span class="float-end"><a href="#"
+                        class="small text-muted text-uppercase aff-link">opiniones</a></span>
+            </div>
+            <h5 class="card-title">
+                <a target="_blank" href="#">{{descripcionCard}}</a>
+            </h5>
+            <div class="d-grid gap-2 my-4">
+                <a href="#" (click)="onEsDetalle();" class="btn btn-warning bold-btn">comprar</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
