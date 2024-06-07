@@ -1,9 +1,11 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { register } from 'swiper/element/bundle';
 import { ProductCardComponent } from './shared/components/product-card/product-card.component';
 import { CardProduct } from './models/card-product';
 import { ProductDetilComponent } from './shared/components/product-detil/product-detil.component';
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 register();
 @Component({
   selector: 'app-root',
@@ -13,8 +15,12 @@ register();
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   styleUrl: './app.component.scss',
   host: {ngSkipHydration: 'true'},
+  
 })
-export class AppComponent {
+
+export class AppComponent implements OnInit{
+  
+  
   estadoHola = false;
   title = 'app-prueba-v1';
 
@@ -86,6 +92,9 @@ export class AppComponent {
       ]
     },
 ];
+ngOnInit(): void {
+  
+}
 
   mostrar() {
     
